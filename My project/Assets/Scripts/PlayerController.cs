@@ -56,10 +56,12 @@ public class PlayerController : MonoBehaviour
                 gate.gameObject.SetActive(false);
             }
         }
-        if (other.gameObject.CompareTag("Danger"))
+        if(other.gameObject.tag == "danger")
+
         {
             Application.LoadLevel(Application.loadedLevel);
         }
+
     }
     void SetScoreText()
     {
