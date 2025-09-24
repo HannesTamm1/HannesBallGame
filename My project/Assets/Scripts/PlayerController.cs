@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject gate;
     private Rigidbody rb;
     public int score;
+    public AudioSource coinSound;
 
     // Start is called before the first frame update
     void Start()
@@ -50,10 +51,14 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             score++;
+            coinSound.Play();
             SetScoreText();
             if (score >= 5)
             {
                 gate.gameObject.SetActive(false);
+            }
+            else if (score >= 10) {
+                gate1.gameObject.SetActive(false);
             }
         }
         if(other.gameObject.tag == "danger")
@@ -67,7 +72,8 @@ public class PlayerController : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
 
-        if (score >= 35)
+        if (score >= 40
+            )
         {
             winText.text = "You win, press R to restart or ESC to exit";
         }
