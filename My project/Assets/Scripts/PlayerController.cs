@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
 
-        if (score >= 10)
+        if (score >= 35)
         {
             winText.text = "You win, press R to restart or ESC to exit";
         }
